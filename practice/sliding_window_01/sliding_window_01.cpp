@@ -2,6 +2,8 @@
 using namespace std;
 
 int main() {
-  cout << "sliding winddow 1" << endl;
+  int a = 20;
+  int b = 2;
+  cout << a * b << endl;
   return 0;
 }
