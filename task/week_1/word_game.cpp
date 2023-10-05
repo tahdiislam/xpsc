@@ -5,39 +5,47 @@ int main()
 {
   int t;
   cin >> t;
-  while (t--) {
+  while (t--)
+  {
     int n;
     cin >> n;
-    string p1[n];
-    string p2[n];
-    string p3[n];
-    for(int i = 0; i < n;i++)
-      cin >> p1[i];
-    for(int i = 0; i < n;i++)
-      cin >> p2[i];
-    for(int i = 0; i < n;i++)
-      cin >> p3[i];
-    int p1n= 0, p2n = 0, p3n = 0;
-    for(int i = 0; i < n;i++)
+    map<string, vector<int>> mp;
+    for (int i = 0; i < n; i++)
     {
-      if(p1[i] == p2[i] && p1[i] != p3[i])
+      string a;
+      cin >> a;
+      mp[a].push_back(1);
+    }
+    for (int i = 0; i < n; i++)
+    {
+      string a;
+      cin >> a;
+      mp[a].push_back(2);
+    }
+    for (int i = 0; i < n; i++)
+    {
+      string a;
+      cin >> a;
+      mp[a].push_back(3);
+    }
+    // int p1 = 0, p2 = 0, p3 = 0;
+    int p[3] = {0};
+    for (auto it = mp.begin(); it != mp.end(); ++it)
+    {
+      const vector<int> &v = it->second;
+      if (v.size() == 1)
+        p[v[0] - 1] += 3;
+      else if (v.size() == 2)
       {
-        p1n ++;
-        p2n ++;
-        p3n += 3;
-      }else if(p1[i] == p3[i] && p1[i] != p2[i])
-      {
-        p1n ++;
-        p3n ++;
-        p2n += 3;
-      }else if(p2[i] == p3[i] && p2[i] != p1[i])
-      {
-        p2n ++;
-        p3n ++;
-        p1n += 3;
+        p[v[0] - 1]++;
+        p[v[1] - 1]++;
       }
     }
-    cout << p1n << " " << p2n << " " << p3n << endl;
+    for (int a : p)
+    {
+      cout << a << " ";
     }
+    cout << endl;
+  }
   return 0;
 }
