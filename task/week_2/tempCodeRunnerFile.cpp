@@ -1,2 +1,1 @@
-
-    //     cout << i.first 
+i = i + d - 1400;
