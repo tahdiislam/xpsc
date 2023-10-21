@@ -18,17 +18,14 @@ int main()
             string a = arr[i];
             for (int j = 0; j < n; j++)
             {
-                if (j != n - 1)
-                    if (arr[j] + arr[j] == a || arr[j] + arr[j + 1] == a)
+                for(int k = 0; k < n; k++)
+                {
+                    if(arr[j] + arr[k] == a)
                     {
                         ans[i] = 1;
                         break;
                     }
-                    else if (arr[j] + arr[j] == a)
-                    {
-                        ans[i] = 1;
-                        break;
-                    }
+                }
             }
         }
         for (int i = 0; i < n; i++)
