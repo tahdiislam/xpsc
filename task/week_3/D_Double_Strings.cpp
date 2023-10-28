@@ -9,27 +9,25 @@ int main()
     {
         int n;
         cin >> n;
-        string arr[n];
-        for (int i = 0; i < n; i++)
-            cin >> arr[i];
-        int ans[n] = {0};
+        string s[n];
+        map<string, bool> mp;
         for (int i = 0; i < n; i++)
         {
-            string a = arr[i];
-            for (int j = 0; j < n; j++)
-            {
-                for(int k = 0; k < n; k++)
-                {
-                    if(arr[j] + arr[k] == a)
-                    {
-                        ans[i] = 1;
-                        break;
-                    }
-                }
-            }
+            cin >> s[i];
+            mp[s[i]] = true;
         }
         for (int i = 0; i < n; i++)
-            cout << ans[i];
+        {
+            bool ok = false;
+            for (int j = 0; j < s[i].size(); j++)
+            {
+                string pref = s[i].substr(0, j);
+                string suff = s[i].substr(j, s[i].length() - j);
+                if (mp[pref] && mp[suff])
+                    ok = true;
+            }
+            cout << ok;
+        }
         cout << endl;
     }
     return 0;

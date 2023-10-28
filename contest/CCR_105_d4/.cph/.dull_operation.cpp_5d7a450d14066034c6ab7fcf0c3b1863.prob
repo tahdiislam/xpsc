@@ -1,0 +1,1 @@
+{"name":"Local: dull_operation","url":"c:\\Users\\tahdi\\Documents\\xpsc\\contest\\CCR_105_d4\\dull_operation.cpp","tests":[{"id":1698247395191,"input":"4\n1\n49\n21\n35","output":"1 0\n3 4\n7 4\n7 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\tahdi\\Documents\\xpsc\\contest\\CCR_105_d4\\dull_operation.cpp","group":"local","local":true}

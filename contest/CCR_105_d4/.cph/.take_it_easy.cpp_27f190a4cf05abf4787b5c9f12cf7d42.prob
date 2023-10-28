@@ -1,0 +1,1 @@
+{"name":"Local: take_it_easy","url":"c:\\Users\\tahdi\\Documents\\xpsc\\contest\\CCR_105_d4\\take_it_easy.cpp","tests":[{"id":1698245654868,"input":"3\n2\n4 4\n3\n2 4 12\n2\n4 6","output":"Yes\nYes\nNo"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\tahdi\\Documents\\xpsc\\contest\\CCR_105_d4\\take_it_easy.cpp","group":"local","local":true}
