@@ -17,31 +17,31 @@ int main()
         int i = 0;
         while (i < n)
         {
-            if (s[i] > 2)
+            if (int(s[i] - '0') > 2)
             {
-                ans += arr[i - 1];
+                ans += arr[int(s[i] - '0') - 1];
                 i++;
             }
             else
             {
-                if (i == n - 3)
+                if (i <= n - 2)
                 {
-                    if (s[i + 2] == '0')
+                    if (s[i + 2] == '0' && s[i + 3] != '0')
                     {
                         string a;
                         a += s[i];
                         a += s[i + 1];
-                        ans += arr[stoi(a)];
+                        ans += arr[stoi(a) - 1];
                         i += 3;
                     }
                     else
-                        ans += arr[i - 1], i++;
+                        ans += arr[int(s[i] - '0') - 1], i++;
                 }
                 else
-                    ans += arr[i - 1], i++;
+                    ans += arr[int(s[i] - '0') - 1], i++;
             }
-            cout << ans << endl;
         }
+        cout << ans << endl;
     }
     return 0;
 }
