@@ -9,11 +9,21 @@ int main()
     {
         int n;
         cin >> n;
-        int arr[n][n];
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++)
-                cin >> arr[i][j];
-        
+        vector<int> v;
+        for (int i = n * n; i > 0; i -= 2)
+        {
+            v.push_back(i);
+        }
+        for (int i = (n * n) - 1; i > 0; i -= 2)
+        {
+            v.push_back(i);
+        }
+        for (int i = 0; i < v.size(); i++)
+        {
+            if (i != 0 && i % n == 0)
+                cout << '\n';
+            cout << v[i] << " ";
+        }
     }
     return 0;
 }
