@@ -1,5 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
+
+void solve()
+
+{
+    int n;
+    cin >> n;
+    ll arr[n];
+    for (auto &c : arr)
+        cin >> c;
+    set<ll> st;
+    for (auto c : arr)
+        st.insert(c);
+    if (n == 4)
+    {
+        if (arr[0] + arr[1] != arr[2] + arr[3])
+            cout << "YES"
+                 << "\n";
+        else
+            cout << "NO"
+                 << "\n";
+    }
+    else
+    {
+        if (st.size() >= 2)
+            cout << "YES"
+                 << "\n";
+        else
+            cout << "NO"
+                 << "\n";
+    }
+}
 
 int main()
 {
@@ -10,24 +42,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++)
-            cin >> v[i];
-        bool ok = false;
-        for (int i = 0, j = n - 1; i < n, j > 0; i++, j--)
-        {
-            if (i > j)
-                break;
-            else if (v[i] + v[i + 1] != v[j] + v[j - 1])
-                ok = true;
-            break;
-        }
-        if (ok)
-            cout << "YES" << endl;
-        else
-            cout << "NO" << endl;
+        solve();
     }
     return 0;
 }
