@@ -1,53 +1,39 @@
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve()
+int main()
 {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     int t;
     cin >> t;
     while (t--)
     {
         int n;
         cin >> n;
-        vector<long long> a(n);
-        long long sum = 0;
-
+        int arr[n];
+        double sum = 0;
+        double odd_sum = 0;
+        double even_sum = 0;
         for (int i = 0; i < n; i++)
         {
-            cin >> a[i];
-            sum += a[i];
+            cin >> arr[i];
+            sum += arr[i];
+            if (i % 2 != 0)
+                odd_sum += arr[i];
+            else
+                even_sum += arr[i];
         }
-
-        if (sum % n != 0)
-        {
+        double avg = sum / n;
+        int a = (n % 2 == 0) ? (n / 2) : ((n / 2) + 1);
+        double even_avg = even_sum / a;
+        double odd_avg = odd_sum / (n - a);
+        int int_part = static_cast<int>(avg);
+        if (avg == int_part && avg == even_avg && avg == odd_avg)
+            cout << "YES" << endl;
+        else
             cout << "NO" << endl;
-            continue;
-        }
-
-        long long target = sum / n;
-        long long surplus = 0;
-
-        bool possible = true;
-        for (int i = 0; i < n; i++)
-        {
-            surplus += (a[i] - target);
-            if (surplus < 0)
-            {
-                possible = false;
-                break;
-            }
-        }
-
-        cout << (possible ? "YES" : "NO") << endl;
     }
-}
-
-int main()
-{
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    solve();
     return 0;
 }
