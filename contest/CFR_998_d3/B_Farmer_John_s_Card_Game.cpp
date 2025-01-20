@@ -26,7 +26,7 @@ int main()
         int b[n];
         for(int i = 0; i < n; i ++)
         {
-            b[]
+            // b[]
         }
     }
     return 0;
